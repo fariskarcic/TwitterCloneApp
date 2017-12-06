@@ -3,6 +3,7 @@ var gutil = require('gulp-util');
 var uglify = require('gulp-uglify'),
 concat = require('gulp-concat');
 var connect = require('gulp-connect');
+var webserver = require('gulp-webserver');
 
 gulp.task('log', function() {
     gutil.log('== My Log Task ==')
@@ -17,7 +18,17 @@ gulp.task('log', function() {
 
   gulp.task('connect', function() {
     connect.server({
-      root: 'server.js',
+      root: '.',
       livereload: true
     })
+  });
+
+  gulp.task('webserver', function() {
+    gulp.src('.')
+      .pipe(webserver({
+        path: "server.js",
+        livereload: true,
+        directoryListing: true,
+        open: true
+      }));
   });

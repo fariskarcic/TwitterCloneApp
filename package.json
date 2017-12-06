@@ -20,7 +20,8 @@
     "gulp-coffee": "latest",
     "gulp-uglify": "latest",
     "gulp-concat": "latest",
-    "gulp-connect": "latest"
+    "gulp-connect": "latest",
+    "gulp-webserver": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
