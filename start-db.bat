@@ -1,1 +1,1 @@
-"C:\MongoDB\Server\3.4\bin\mongod.exe" --dbpath C:\TwitterApp\TwitterCloneApp\data\db
+"C:\MongoDB\Server\3.4\bin\mongod.exe" --dbpath data\db
