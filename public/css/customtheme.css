@@ -1,0 +1,38 @@
+#profile-box{
+    margin: 30px 0 0 0;
+    border: thin;
+    border-color: black;
+}
+
+#tweet-input{
+    margin-top: 150px;
+}
+
+#user-img{
+    height: 150;
+    widows: 150;
+    border-radius: 50px;
+}
+
+.img-in-list{
+    height:42;
+    width:42;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+#tweet-list{
+    margin: 30px 200px 20px 20px;
+}
+.user-info{
+    margin: 20px 5px 5px 5px;
+    
+}
+.box {
+    border: 1px solid #0E0D0D;
+    padding: 5px;
+}
+
+.tweet{
+    max-width: 300px;
+}

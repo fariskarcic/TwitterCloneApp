@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html ng-app="TwitterCloneApplication">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/customtheme.css">
+    <title>
+        Twitter Clone Application
+    </title>
+</head>
+
+<body>
+    <div class="container" ng-controller="TCCtrl">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div id="profile-box">
+                    <img ng-src="{{user.img}}" alt="User" id="user-img" class="col-lg-6">
+                    <div id="user-info" class="col-lg-6">
+                        <div class="row user-info">
+                            {{user.username}}
+                        </div>
+                        <div class="row user-info">
+                            @{{user.username}}
+                        </div>
+                        <div class="row user-info">
+                            Tweets: {{tweetCount}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <div id="tweet-input" class="col-lg-6 ">
+                    <input class="form-control" ng-model="tweet"  ng-keyup="$event.keyCode == 13 ? submitTweet() : null">
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="row" id="tweet-list" ng-repeat="tweet in tweets | orderBy:'-'">
+
+
+                <div >
+                    <div class="col-lg-8 pull-right">
+                        <div class="tweet-in-list ">
+                            <img class="img-in-list pull-left" ng-src="{{user.img}}" alt="User">
+                            <div class="row col-lg-8">
+                                <div class="info-in-list pull-left">@{{user.username}} - {{tweet.difference}}</div>
+                                <div ng-click="remove(tweet._id)"><i class="fa fa-times pull-right"></i></div>
+                            </div>
+                            <div class="row col-lg-8">
+                                <div class="tweet">{{tweet.message}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+</body>
+
+</html>
