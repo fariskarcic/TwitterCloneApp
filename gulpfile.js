@@ -17,7 +17,7 @@ gulp.task('log', function() {
 
   gulp.task('connect', function() {
     connect.server({
-      root: '.',
+      root: 'server.js',
       livereload: true
     })
   });
