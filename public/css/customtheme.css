@@ -1,28 +1,38 @@
 #profile-box{
-    margin: 30px 0 0 0;
+    margin: 30px 30px 30px 30px;
     border: thin;
     border-color: black;
 }
-
+ 
 #tweet-input{
-    margin-top: 150px;
+    margin-top: 35px;
+    max-width: 600px;
 }
 
 #user-img{
-    height: 150;
-    widows: 150;
+    max-width: 300px;
+    max-height: 300px;
     border-radius: 50px;
 }
-
+.padding-top {
+    padding-top: 30px;
+}
+.image-size {
+    width: 80px;
+    height: 20px;
+}
 .img-in-list{
-    height:42;
-    width:42;
+    max-height: 100px;
+    max-width: 100px;
     border-radius: 10px;
-    margin-right: 10px;
+   
 }
 
 #tweet-list{
-    margin: 30px 200px 20px 20px;
+    margin: 30px 200px 20px 0;
+    max-width: 600px;
+    border-radius: 9px;
+    padding-left: 20px;
 }
 .user-info{
     margin: 20px 5px 5px 5px;
@@ -34,5 +44,22 @@
 }
 
 .tweet{
+    max-width: 600px;
     word-wrap: break-word;
+}
+
+.form-control{
+    border-color: #eee;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control:focus {
+    border: 1px solid #3cf;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
 }

@@ -20,8 +20,23 @@ gulp.task('log', function() {
     connect.server({
       root: '.',
       livereload: true
+      
     })
   });
+
+  gulp.task('default', function(){
+    nodemon({
+        script: 'server.js',
+        ext: 'js',
+        env: {
+            PORT:8080
+        },
+        ignore: ['./node_modules/**']
+    })
+    .on('restart', function(){
+        console.log('Restarting');
+    });
+});
 
   gulp.task('webserver', function() {
     gulp.src('.')
