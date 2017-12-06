@@ -28,8 +28,7 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                     var toDate = new Date();
                     var diff = timeDifference(toDate, fromDate);
                     var obj = { message: response.data.message, datetime: response.data.datetime, difference: diff }
-                    $scope.tweets.push(obj);
-                    $scope.tweetCount = $scope.tweetCount + 1;
+                    getTweets();
                 });
 
         }
@@ -47,7 +46,7 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                     break;
                 }
             };
-            $scope.tweetCount= $scope.tweetCount - 1;
+            $scope.tweetCount = $scope.tweetCount - 1;
         });
     }
 
@@ -60,29 +59,31 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
             $scope.user = response.data;
         });
 
-    $http({
-        method: 'GET',
-        url: '/tweets'
-    })
-        .then(function (response) {
-            //  $scope.date = new Date();
-            // var dateNow = $scope.date;
-            var list = [];
-            console.log("I got the tweets I requested");
-            for (var i = 0; i < response.data.length; i++) {
-                var dateLast = response.data[i].datetime;
-                var fromDate = new Date(dateLast);
-                var toDate = new Date();
-                var diff = timeDifference(toDate, fromDate);
-                var obj = {_id: response.data[i]._id, message: response.data[i].message, datetime: response.data[i].datetime, difference: diff };
-                list.push(obj);
-                numOfTweets = i;
-            }
-            $scope.tweetCount = i;
-            $scope.tweets = list;
-        });
+    var getTweets = function () {
+        $http({
+            method: 'GET',
+            url: '/tweets'
+        })
+            .then(function (response) {
+                //  $scope.date = new Date();
+                // var dateNow = $scope.date;
+                var list = [];
+                console.log("I got the tweets I requested");
+                for (var i = 0; i < response.data.length; i++) {
+                    var dateLast = response.data[i].datetime;
+                    var fromDate = new Date(dateLast);
+                    var toDate = new Date();
+                    var diff = timeDifference(toDate, fromDate);
+                    var obj = { _id: response.data[i]._id, message: response.data[i].message, datetime: response.data[i].datetime, difference: diff };
+                    list.push(obj);
+                    numOfTweets = i;
+                }
+                $scope.tweetCount = i;
+                $scope.tweets = list;
+            });
+    }
 
-
+    getTweets();
     function timeDifference(current, previous) {
 
         var msPerMinute = 60 * 1000;

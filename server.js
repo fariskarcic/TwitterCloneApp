@@ -58,10 +58,9 @@ app.delete('/tweets/:id', function(req,res){
     Tweet.findByIdAndRemove(id, function(err, doc){
         res.json(doc);
     });
-    // db.twitterclone.remove({_id: mongojs.ObjectId(id)}, function(err, doc){
-    //     res.json(doc);
-    // })
+    
 });
+
 
 app.listen(4000);
 console.log("Server running on port 4000");
