@@ -48,11 +48,11 @@
                 </div>
                 <div class="row jumbotron col-sm-12 col-xs-12" id="tweet-list" ng-repeat="tweet in tweets | orderBy:'-'">
                     <div class="tweet-in-list col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div ng-click="remove(tweet._id)" class="col-xs-12"><i class="fa fa-times pull-right"></i></div>
-                            
+                        <div ng-click="remove(tweet._id)" class="col-xs-12"><i class="fa fa-times pull-right"></i></div>
+
                         <img class="img-in-list pull-left col-lg-4 col-md-4 col-sm-4 col-xs-12" ng-src="{{user.img}}" alt="User">
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                            
+
                             <div class="info-in-list pull-left">{{user.username}} - {{tweet.difference}}</div>
                         </div>
                         <hr/>
