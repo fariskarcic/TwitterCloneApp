@@ -1,0 +1,39 @@
+{
+  "name": "twittercloneapp",
+  "version": "1.0.0",
+  "description": "twitter clone application made on MEAN stack",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "angularjs": "^0.0.1",
+    "moment": "^2.19.3",
+    "momentjs": "^2.0.0",
+    "mongoose": "^4.13.6",
+    "expressjs": "^1.0.1",
+    "mongojs": "^2.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "latest",
+    "gulp-sass": "latest",
+    "gulp-coffee": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fariskarcic/TwitterCloneApp.git"
+  },
+  "author": "Faris Karcic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fariskarcic/TwitterCloneApp/issues"
+  },
+  "homepage": "https://github.com/fariskarcic/TwitterCloneApp#readme"
+}
