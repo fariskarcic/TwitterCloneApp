@@ -4,9 +4,7 @@ var myApp = angular.module('TwitterCloneApplication', []);
 myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
     console.log("Controller successfully initialized.");
 
-    var getDatetime = function () {
-        return Date.now();
-    };
+    getTweets();
 
     $scope.submitTweet = function () {
         if ($scope.tweet == undefined) {
@@ -59,7 +57,7 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
             $scope.user = response.data;
         });
 
-    var getTweets = function () {
+    function getTweets () {
         $http({
             method: 'GET',
             url: '/tweets'
@@ -78,14 +76,12 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                     list.push(obj);
                     numOfTweets = i;
                 }
-                
-                
                 $scope.tweetCount = i;
                 $scope.tweets = list;
             });
     }
 
-    getTweets();
+    
     function timeDifference(current, previous) {
 
         var msPerMinute = 60 * 1000;
