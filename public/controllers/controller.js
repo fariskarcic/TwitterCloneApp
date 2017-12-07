@@ -21,7 +21,7 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                 data: data,
             })
                 .then(function (response) {
-                    $scope.tweet = "";
+                    $scope.tweet = undefined;
                     console.log('POST Response: ' + response.statusText);
                     var dateLast = response.data.datetime;
                     var fromDate = new Date(dateLast);
