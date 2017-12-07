@@ -34,7 +34,7 @@
                             {{user.username}}
                         </div>
                         <div class="row user-info">
-                            @{{user.username}}
+                            @{{user.username.replace(" ","").toLowerCase()}}
                         </div>
                         <div class="row user-info">
                             Tweets: {{tweetCount}}

@@ -78,6 +78,8 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                     list.push(obj);
                     numOfTweets = i;
                 }
+                
+                
                 $scope.tweetCount = i;
                 $scope.tweets = list;
             });

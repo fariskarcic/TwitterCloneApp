@@ -26,7 +26,7 @@ var Tweet = mongoose.model('Tweet', tweetSchema);
 
 app.get('/user', function(req, res){
     console.log("I received user request");
-    var faris = new User({username: 'fariskarcic', img: 'img/user.png'});
+    var faris = new User({username: 'Faris Karcic', img: 'img/user.png'});
     User.find(function(err, docs){
         console.log(faris);
     })
