@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/data/db');
+mongoose.connect('mongodb://localhost/test', { useMongoClient: true });
 var db = mongoose.connection;
 var bodyParser = require('body-parser');
 var moment = require('moment');
@@ -9,6 +9,7 @@ var moment = require('moment');
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
     console.log('Successfully connected to db');
+    
 });
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
