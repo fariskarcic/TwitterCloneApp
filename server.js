@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test', { useMongoClient: true });
 var db = mongoose.connection;
 var bodyParser = require('body-parser');
-var moment = require('moment');
+
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){

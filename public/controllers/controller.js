@@ -63,8 +63,6 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
             url: '/tweets'
         })
             .then(function (response) {
-                //  $scope.date = new Date();
-                // var dateNow = $scope.date;
                 var list = [];
                 console.log("I got the tweets I requested");
                 for (var i = 0; i < response.data.length; i++) {
@@ -74,7 +72,6 @@ myApp.controller('TCCtrl', ['$scope', '$http', function ($scope, $http) {
                     var diff = timeDifference(toDate, fromDate);
                     var obj = { _id: response.data[i]._id, message: response.data[i].message, datetime: response.data[i].datetime, difference: diff };
                     list.push(obj);
-                    numOfTweets = i;
                 }
                 $scope.tweetCount = i;
                 $scope.tweets = list;
